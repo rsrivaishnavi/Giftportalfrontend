@@ -1,0 +1,13 @@
+.display-gift {
+  padding: 2rem;
+}
+
+.display-gift ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.display-gift li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}

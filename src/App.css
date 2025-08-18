@@ -1,0 +1,272 @@
+/* ===== GLOBAL THEME COLORS ===== */
+:root {
+  --primary-violet: #7a4fc4;
+  --primary-violet-dark: #5a38a3;
+  --accent-lavender: #b38aff;
+  --light-bg: #f9f7fc;
+  --card-bg: #ffffff;
+  --text-dark: #2e2e2e;
+}
+
+/* ===== GENERAL RESETS ===== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+/* ===== FORM CONTAINERS ===== */
+.apply-form,
+.auth-card {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.apply-form h2,
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--primary-violet), var(--accent-lavender));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* ===== INPUTS ===== */
+.apply-form input,
+.auth-card input,
+textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #d0c9e6;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.apply-form input:focus,
+.auth-card input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-violet);
+  box-shadow: 0 0 5px rgba(122, 79, 196, 0.4);
+}
+
+/* ===== BUTTONS ===== */
+button,
+.auth-card button,
+.apply-form button {
+  display: inline-block;
+  padding: 10px 18px;
+  border: none;
+  background: var(--primary-violet);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover,
+.auth-card button:hover,
+.apply-form button:hover {
+  background: var(--primary-violet-dark);
+  transform: translateY(-1px);
+}
+
+/* ===== BACK BUTTON ===== */
+.back-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--primary-violet);
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* ===== AUTH PAGE BG ===== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-violet), var(--accent-lavender));
+}
+
+/* ===== DISPLAY GIFTS ===== */
+.display-gift {
+  padding: 2rem;
+}
+
+.display-gift h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-violet);
+}
+
+.display-gift ul {
+  list-style: none;
+  padding: 0;
+}
+
+.display-gift li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===== GIFT CARDS ===== */
+.gift-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gift-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.gift-card h3 {
+  color: var(--primary-violet);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ===== HOME PAGE ===== */
+.home {
+  padding: 2rem;
+  text-align: center;
+}
+
+.home h1 {
+  color: var(--primary-violet);
+}
+
+/* ===== TABLES ===== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+table th {
+  background: var(--primary-violet);
+  color: white;
+}
+
+table tr:hover {
+  background: #f5f0ff;
+}
+
+.navbar {
+  background: linear-gradient(90deg, var(--primary-violet), var(--accent-lavender)) !important;
+}
+
+.navbar-brand,
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #ffd6ff !important;
+}
+
+.navbar .btn-logout {
+  background: var(--primary-violet-dark);
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.navbar .btn-logout:hover {
+  background: #4b2788;
+}
+
+.home-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-section {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--primary-violet), var(--accent-lavender));
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  background: white;
+  color: var(--primary-violet);
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background: #f4e9ff;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  width: 260px;
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  margin-top: 1rem;
+  color: var(--primary-violet);
+}
+
