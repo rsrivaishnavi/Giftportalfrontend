@@ -17,6 +17,7 @@ function UserProfile() {
       } catch {
         alert("User not found");
       } finally {
+        
         setLoading(false);
       }
     };
@@ -42,25 +43,27 @@ function UserProfile() {
   if (loading) return <p>Loading user profile...</p>;
 
   return (
-    <div className="user-profile-container">
-      <h2>User Profile</h2>
-      <div className="profile-field">
-        <label>Name:</label>
-        <input type="text" name="name" value={userData.name} onChange={handleChange} />
+    <div className="page-wrapper">
+      <div className="user-profile-container">
+        <h2>User Profile</h2>
+        <div className="profile-field">
+          <label>Name:</label>
+          <input type="text" name="name" value={userData.name} onChange={handleChange} />
+        </div>
+        <div className="profile-field">
+          <label>Email:</label>
+          <input type="email" name="email" value={userData.email} onChange={handleChange} />
+        </div>
+        <div className="profile-field">
+          <label>Password:</label>
+          <input type="password" name="password" value={userData.password} onChange={handleChange} />
+        </div>
+        <div className="profile-field">
+          <label>Role:</label>
+          <input type="text" name="role" value={userData.role} onChange={handleChange} />
+        </div>
+        <button className="update-button" onClick={handleUpdate}>Update Profile</button>
       </div>
-      <div className="profile-field">
-        <label>Email:</label>
-        <input type="email" name="email" value={userData.email} onChange={handleChange} />
-      </div>
-      <div className="profile-field">
-        <label>Password:</label>
-        <input type="password" name="password" value={userData.password} onChange={handleChange} />
-      </div>
-      <div className="profile-field">
-        <label>Role:</label>
-        <input type="text" name="role" value={userData.role} onChange={handleChange} />
-      </div>
-      <button className="update-button" onClick={handleUpdate}>Update Profile</button>
     </div>
   );
 }

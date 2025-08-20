@@ -20,32 +20,82 @@ function TrackApplicationStatus() {
   };
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-      <h2>Track Your Application Status</h2>
-      <button onClick={handleCheckStatus}>Check My Status</button>
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      padding: "40px",
+      fontFamily: "Segoe UI, sans-serif",
+      background: "#f3e8ff"  // light violet background
+    }}>
+      <h2 style={{ color: "#333", marginBottom: "20px" }}>📌 Track Your Application Status</h2>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <button 
+        onClick={handleCheckStatus} 
+        style={{
+          padding: "10px 20px",
+          background: "#9370db",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          fontSize: "16px",
+          transition: "0.3s"
+        }}
+        onMouseOver={(e) => e.target.style.background = "#9370db"}
+        onMouseOut={(e) => e.target.style.background = "#9370db"}
+      >
+        Check My Status
+      </button>
+
+      {error && (
+        <p style={{ color: "red", marginTop: "20px", fontWeight: "bold" }}>
+          {error}
+        </p>
+      )}
 
       {application && (
-        <div style={{ marginTop: '20px' }}>
-          <h3>Application Details</h3>
-          <table border="1" cellPadding="10">
+        <div style={{
+          marginTop: "30px",
+          background: "#fff",
+          borderRadius: "12px",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+          padding: "20px",
+          width: "80%",
+          maxWidth: "700px"
+        }}>
+          <h3 style={{ marginBottom: "15px", color: "#4a4a4a" }}>Application Details</h3>
+          
+          <table style={{
+            width: "100%",
+            borderCollapse: "collapse",
+            textAlign: "left"
+          }}>
             <thead>
-              <tr>
-                <th>Business Name</th>
-                <th>Contact Person</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Status</th>
+              <tr style={{ background: "#f0f4f8" }}>
+                <th style={{ padding: "12px", borderBottom: "2px solid #ddd" }}>Business Name</th>
+                <th style={{ padding: "12px", borderBottom: "2px solid #ddd" }}>Contact Person</th>
+                <th style={{ padding: "12px", borderBottom: "2px solid #ddd" }}>Email</th>
+                <th style={{ padding: "12px", borderBottom: "2px solid #ddd" }}>Phone Number</th>
+                <th style={{ padding: "12px", borderBottom: "2px solid #ddd" }}>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{application.businessName}</td>
-                <td>{application.contactPerson}</td>
-                <td>{application.email}</td>
-                <td>{application.phoneNumber}</td>
-                <td><strong>{application.status}</strong></td>
+              <tr style={{ background: "#fff" }}>
+                <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>{application.businessName}</td>
+                <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>{application.contactPerson}</td>
+                <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>{application.email}</td>
+                <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>{application.phoneNumber}</td>
+                <td style={{ 
+                  padding: "12px", 
+                  borderBottom: "1px solid #eee", 
+                  fontWeight: "bold", 
+                  color: application.status === "Approved" ? "green" : application.status === "Pending" ? "orange" : "red" 
+                }}>
+                  {application.status}
+                </td>
               </tr>
             </tbody>
           </table>

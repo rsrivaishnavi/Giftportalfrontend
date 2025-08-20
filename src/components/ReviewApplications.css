@@ -1,0 +1,136 @@
+:root {
+  --approved-green: #90ee90;
+  --pending-yellow: #fff176;
+  --rejected-red: #ff7f7f;
+  --dark-violet: #4b0082;
+  --card-bg: #fff;
+  --main-bg: #f3e8ff;
+}
+
+/* Wrapper */
+.review-wrapper {
+  padding: 30px;
+  background-color: var(--main-bg);
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.review-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--dark-violet);
+}
+
+/* Grid - 4 cards per row */
+.gift-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive */
+  max-width: 1400px; /* ensures 4 per row on large screens */
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* Gift Card */
+.gift-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gift-card:hover {
+  transform: translateY(-5px);
+}
+
+.gift-card-img-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.gift-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gift-card-content {
+  padding: 15px;
+}
+
+.gift-card-content h3 {
+  margin-bottom: 8px;
+}
+
+/* Icons */
+.gift-card-icons {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.icon {
+  color: #333;
+  transition: color 0.2s;
+}
+
+.icon:hover {
+  color: var(--dark-violet);
+}
+
+/* Reviewer textarea */
+.review-textarea {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 14px;
+}
+
+/* Buttons */
+.review-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.approve-btn,
+.reject-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 5px;
+}
+
+.approve-btn {
+  background-color: var(--approved-green);
+}
+
+.approve-btn:hover {
+  background-color: #7ccd7c;
+}
+
+.reject-btn {
+  background-color: var(--rejected-red);
+}
+
+.reject-btn:hover {
+  background-color: #e06666;
+}
+
+/* No apps message */
+.no-apps {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}

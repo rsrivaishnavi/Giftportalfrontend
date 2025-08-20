@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -15,13 +14,30 @@ function Login() {
     setError("");
 
     try {
+      // 1️⃣ Send login request
       const response = await axios.post("http://localhost:8080/auth/login", {
         email,
         password,
       });
 
-      localStorage.setItem("token", response.data.accessToken); // store JWT
-      navigate("/");
+      // 2️⃣ Store token in localStorage
+      localStorage.setItem("token", response.data.accessToken);
+
+      // 3️⃣ Store role if backend sends it directly
+      if (response.data.role) {
+        localStorage.setItem("role", response.data.role);
+      } else {
+        // If role not returned, fetch user profile to get it
+        const { data: userProfile } = await axios.get(
+          "http://localhost:8080/users/profile",
+          {
+            headers: { Authorization: `Bearer ${response.data.accessToken}` },
+          }
+        );
+        localStorage.setItem("role", userProfile.role);
+      }
+
+      navigate("/"); // redirect to home after login
     } catch (err) {
       setError(err.response?.data || "Invalid email or password");
     }
@@ -29,31 +45,31 @@ function Login() {
 
   return (
     <div className="auth-container">
-      <div className="auth-card">
-        <h2>Login</h2>
-        {error && <p className="auth-error">{error}</p>}
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-
-          <button type="submit">Login</button>
-        </form>
-        <p className="auth-switch">
-          Don't have an account? <Link to="/signup">Sign Up</Link>
-        </p>
+      <div className="auth-layout">
+        <div className="auth-card">
+          <h2>Login</h2>
+          {error && <p className="auth-error">{error}</p>}
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+          <p className="auth-switch">
+            Don’t have an account? <Link to="/signup">Sign Up</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

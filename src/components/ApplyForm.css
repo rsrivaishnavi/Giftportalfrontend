@@ -1,57 +1,92 @@
-/* .apply-form {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  background-color: #fafafa;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Full container */
+.apply-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
 }
 
-.apply-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.apply-form form {
+/* Card that holds everything */
+.apply-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(74, 20, 140, 0.25);
+  animation: fadeIn 0.6s ease-in-out;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
-.apply-form input {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.apply-form button {
-  padding: 10px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.apply-form button:hover {
-  background-color: #0056b3;
-}
-
+/* Back button aligned left */
 .back-button {
-  margin-bottom: 15px;
+  align-self: flex-start;
   background: none;
   border: none;
-  font-size: 16px;
-  color: #007bff;
+  font-size: 1rem;
+  color: #7e57c2;
   cursor: pointer;
-  text-align: left;
   padding: 0;
+  transition: color 0.3s ease;
 }
 
 .back-button:hover {
   text-decoration: underline;
-} */
+  color: #4a148c;
+}
+
+/* Heading aligned properly */
+.apply-card h2 {
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  color: #4a148c;
+  font-size: 1.6rem;
+}
+
+/* Form */
+.apply-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Inputs & Textarea */
+.apply-card input,
+.apply-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.apply-card input:focus,
+.apply-card textarea:focus {
+  border-color: #7e57c2;
+  box-shadow: 0 0 8px rgba(126, 87, 194, 0.3);
+  outline: none;
+}
+
+/* Submit button */
+.apply-card button[type="submit"] {
+  padding: 12px;
+  background: linear-gradient(135deg, #9370db, #7e57c2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.apply-card button[type="submit"]:hover {
+  background: linear-gradient(135deg, #7e57c2, #5e35b1);
+  transform: translateY(-2px);
+}

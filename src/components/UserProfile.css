@@ -1,10 +1,18 @@
+/* Overall page wrapper with light violet background */
+.page-wrapper {
+  background-color: #e6e6fa; /* light violet */
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+/* User profile container */
 .user-profile-container {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 0 auto;
   padding: 30px;
   border-radius: 12px;
   background-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -35,7 +43,7 @@
 }
 
 .profile-field input:focus {
-  border-color: #007bff;
+  border-color: #9370db; /* violet focus */
   outline: none;
 }
 
@@ -46,7 +54,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #007bff;
+  background-color: #9370db;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -54,5 +62,5 @@
 }
 
 .update-button:hover {
-  background-color: #0056b3;
+  background-color: #7b5fc0;
 }

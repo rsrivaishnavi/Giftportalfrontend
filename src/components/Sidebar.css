@@ -1,0 +1,65 @@
+/* src/components/Sidebar.css */
+.sidebar {
+  width: 280px; /* increased from ~200px */
+  height: 100vh;
+  background-color: #1f2937; /* gray-800 */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.logout{
+    display: inline;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* .sidebar-header button:hover {
+  background: #dc2626;
+} */
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 12px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: 9370db; /* gray-700 */
+}

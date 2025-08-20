@@ -1,8 +1,51 @@
-.home {
+.home-container {
+min-height: 100vh; /* full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+  box-sizing: border-box;
+  background: #f3e8ff; /* light violet background */
   text-align: center;
 }
 
-.home h1 {
-  color: #333;
+.home-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.home-container p {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .home-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-container p {
+    font-size: 1rem;
+  }
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.image-row img {
+  border-radius: 12px;
+  width: 30%;
+  object-fit: cover;
+}
+
 }

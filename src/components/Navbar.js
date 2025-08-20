@@ -5,23 +5,32 @@ import './Navbar.css';
 const Navbar = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const user = localStorage.getItem("user");
+  const role = localStorage.getItem("role"); // ADMIN / USER
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    localStorage.removeItem("role");
     navigate("/login");
   };
 
   return (
     <nav className="navbar">
-      <h2>Gift Application</h2>
+      <h2 onClick={() => navigate("/")}>Gift Application</h2>
       <ul>
         <li><Link to="/">Home</Link></li>
-        {token && <li><Link to="/apply">Apply</Link></li>}
+
+        {/* User-specific links */}
+        {role === "USER" && <li><Link to="/apply">Apply</Link></li>}
+        {role === "USER" && <li><Link to="/track-status">Track Application</Link></li>}
+
+        {/* Admin-specific links */}
+        {role === "ADMIN" && <li><Link to="/review-application">Review Applications</Link></li>}
+        {role === "ADMIN" && <li><Link to="/approved-providers">Approved Providers</Link></li>}
+
+        {/* Common link */}
         <li><Link to="/getAllGifts">Gifts</Link></li>
-        {token && <li><Link to="/track-status">Track Application</Link></li>}
-        {token && <li><Link to="/approved-providers">Approved Providers</Link></li>}
+
+        {/* Auth Links */}
         {token ? (
           <>
             <li><Link to="/profile">Profile</Link></li>
