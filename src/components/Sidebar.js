@@ -33,7 +33,7 @@ function Sidebar() {
         <li><Link to="/getAllGifts">Gifts</Link></li>
       </ul>
         <div style={{marginTop:"200%"}} >
-        {token && <button className="logout"  onClick={handleLogout}>Logout</button>}
+        <button className="logout"  onClick={handleLogout}>Logout</button>
         </div>
     </div>
   );
