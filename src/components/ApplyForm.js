@@ -25,7 +25,7 @@ function ApplyForm() {
     try {
       const token = localStorage.getItem('token'); // JWT from storage (if required)
       const response = await axios.post(
-        'http://localhost:8080/gift-providers/giftprovider/apply',
+        'https://giftportalbackend-fyjm.onrender.com/gift-providers/giftprovider/apply',
         formData,
         {
           headers: {
