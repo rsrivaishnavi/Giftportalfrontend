@@ -15,7 +15,7 @@ function Login() {
 
     try {
       // 1️⃣ Send login request
-      const response = await axios.post("http://localhost:8080/auth/login", {
+      const response = await axios.post("https://giftportalbackend-fyjm.onrender.com/auth/login", {
         email,
         password,
       });
