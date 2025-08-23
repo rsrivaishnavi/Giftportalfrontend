@@ -31,7 +31,7 @@ function UserProfile() {
   const handleUpdate = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.put("http://localhost:8080/users/profile", userData, {
+      await axios.put("https://giftportalbackend-fyjm.onrender.com/users/profile", userData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("Profile updated successfully!");
