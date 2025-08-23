@@ -10,7 +10,7 @@ function UserProfile() {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem("token");
-        const { data } = await axios.get("http://localhost:8080/users/profile", {
+        const { data } = await axios.get("https://giftportalbackend-fyjm.onrender.com/users/profile", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUserData(data);
