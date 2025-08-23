@@ -16,7 +16,7 @@ function Signup() {
     setError("");
 
     try {
-      await axios.post("http://localhost:8080/auth/register", {
+      await axios.post("https://giftportalbackend-fyjm.onrender.com/auth/register", {
         name,
         email,
         password,
