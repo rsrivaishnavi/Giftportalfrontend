@@ -8,7 +8,7 @@ function TrackApplicationStatus() {
   const handleCheckStatus = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8080/gift-providers/giftprovider/track', {
+      const res = await axios.get('https://giftportalbackend-fyjm.onrender.com/giftprovider/track', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setApplication(res.data);
