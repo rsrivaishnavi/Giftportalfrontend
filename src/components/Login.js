@@ -29,7 +29,7 @@ function Login() {
       } else {
         // If role not returned, fetch user profile to get it
         const { data: userProfile } = await axios.get(
-          "http://localhost:8080/users/profile",
+          "https://giftportalbackend-fyjm.onrender.com/users/profile",
           {
             headers: { Authorization: `Bearer ${response.data.accessToken}` },
           }
